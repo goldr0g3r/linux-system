@@ -11,8 +11,8 @@ Reproducible developer toolchain for automotive, marine robotics, embedded, AI/M
 | # | Topic | What you get | Time |
 |---|-------|--------------|------|
 | 3.1 | [Containerization: Podman (rootless) + Distrobox](01-containers.md) | Three standing containers (`ros2-humble`, `ros2-jazzy`, `embedded-fedora`) that share your `$HOME`, `/dev`, and display. | 20 min |
-| 3.2 | [Embedded & hardware toolchain](02-embedded.md) | KiCad 8, `arm-none-eabi-gcc`, OpenOCD, ST-Link rules, PlatformIO, VS Code (native, not Snap). | 30 min |
-| 3.3 | [AI/ML: NVIDIA 550 + CUDA 12.4 + cuDNN + PyTorch via `uv`](03-ai-ml.md) | Working CUDA, PyTorch that reports the RTX 3050, Ollama + Open WebUI for local LLMs. | 30 min |
+| 3.2 | [Embedded & hardware toolchain](02-embedded.md) | KiCad 9, `arm-none-eabi-gcc`, OpenOCD, ST-Link rules, PlatformIO, VS Code (native, not Snap). | 30 min |
+| 3.3 | [AI/ML: NVIDIA 580 + CUDA 13.2 + cuDNN 9.21 + PyTorch via `uv`](03-ai-ml.md) | Working CUDA, PyTorch that reports the RTX 3050, Ollama + Open WebUI for local LLMs. | 30 min |
 | 3.4 | [Next.js blog workflow](04-web.md) | `fnm` + `pnpm` + Vercel CLI, optional containerized Node workspace. | 10 min |
 | 3.5 | [Learning roadmap for subsea robotics](05-learning-roadmap.md) | Ranked list of the subsystems you must master to transition credibly. | (ongoing) |
 

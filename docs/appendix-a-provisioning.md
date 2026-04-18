@@ -38,7 +38,7 @@ A single, idempotent-where-possible bash script that chains all the post-install
 - Masks slow-boot services.
 - Configures `sysctl`, zram, fstrim.
 - Installs ST-Link and PlatformIO udev rules.
-- Adds KiCad 8 PPA + installs KiCad.
+- Adds KiCad 9 PPA + installs KiCad.
 - Adds Microsoft APT repo + installs VS Code.
 - Installs NVIDIA 580 driver + CUDA 13.2 + cuDNN 9.21.
 - Installs `uv` and `fnm`.

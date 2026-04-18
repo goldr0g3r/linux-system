@@ -24,7 +24,7 @@ Common failure modes and concrete fixes. Symptoms are ordered roughly by when in
 | Massive battery drain when idle (2–3 h) | dGPU not going to D3cold; ASPM not forced | Kernel cmdline: add `pcie_aspm=force nvidia.NVreg_DynamicPowerManagement=0x02` |
 | `prime-run` shows `OpenGL renderer: llvmpipe` | PRIME offload environment not set | Ensure `nvidia-prime` is installed and use `prime-run <cmd>`; check `glxinfo -B` vs `prime-run glxinfo -B`. See [3.3](03-dev-environment/03-ai-ml.md). |
 | MUX switch (Hybrid ↔ dGPU-only) changes ignored | `supergfxd` needs reboot to apply | After `supergfxctl -m <mode>` always reboot; only `Hybrid` ↔ `Integrated` can be switched by logout. |
-| CUDA `torch.cuda.is_available()` returns `False` | Wrong wheel (CPU-only) or dGPU off | Reinstall torch with `--index-url https://download.pytorch.org/whl/cu124`; verify `supergfxctl -g` reports `Hybrid`. |
+| CUDA `torch.cuda.is_available()` returns `False` | Wrong wheel (CPU-only) or dGPU off | Reinstall torch with `--index-url https://download.pytorch.org/whl/cu130`; verify `supergfxctl -g` reports `Hybrid`. |
 
 ## Wi-Fi / networking
 
