@@ -11,9 +11,21 @@ The community-maintained [`asus-linux.org`](https://asus-linux.org/) project shi
 
 > **Important:** run this step **after** NVIDIA drivers are installed (see [Part 3.3](../03-dev-environment/03-ai-ml.md)). `supergfxctl` needs the NVIDIA module present to identify Hybrid vs Integrated states. If you have not done Part 3.3 yet, skip ahead, install NVIDIA, then return here.
 
-## Install from source (the canonical path)
+## Option A (recommended): install via PPA
 
-Ubuntu 24.04's own repos ship an older `asusctl`. You want the upstream:
+The community-maintained `ppa:mitchellaugustin/asusctl` packages recent `asusctl` and `supergfxctl` for Ubuntu 24.04. Easier and safer than a source build.
+
+```bash
+sudo add-apt-repository -y ppa:mitchellaugustin/asusctl
+sudo apt update
+sudo apt install -y asusctl supergfxctl
+
+sudo systemctl enable --now asusd supergfxd
+```
+
+If the PPA lags behind a specific feature you need (common if the upstream project tags a release and it hasn't been packaged yet), use Option B below.
+
+## Option B: install from upstream source
 
 ```bash
 # Dependencies for Rust build + D-Bus / udev / system-tray plumbing.
@@ -45,13 +57,13 @@ cd supergfxctl
 git checkout $(git tag --sort=-v:refname | head -n1)
 make
 sudo make install
+
+sudo systemctl enable --now asusd supergfxd
 ```
 
-### Enable and verify
+## Post-install: verify and configure (both options)
 
 ```bash
-sudo systemctl enable --now asusd supergfxd
-
 asusctl --version
 supergfxctl --version
 

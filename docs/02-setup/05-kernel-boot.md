@@ -96,7 +96,7 @@ With this, your effective memory is ~22 GB (16 GB RAM + 8 GB zram acting as ~24 
 
 ### HWE kernel (line 35)
 
-`linux-generic-hwe-24.04` follows the HWE track — pulls in newer kernels (6.11, 6.14, ...) during the LTS cycle. For a Zen 2 Ryzen 4800H, newer kernels keep improving `amd_pstate`, `amdgpu`, and thermal scheduling. Almost always a net win.
+`linux-generic-hwe-24.04` follows the HWE track — pulls in newer kernels during the LTS cycle. As of Ubuntu 24.04.4 LTS (Feb 2026) the HWE kernel is **6.17**, which brings SmartMux support for AMD hybrid laptops (relevant to your TUF A17 dGPU idle), better `amd_pstate` on Zen 2, RDNA 4 support (forward-looking), and improved Wi-Fi 7. Another HWE bump to kernel 6.20/7.0 is expected in the 24.04.5 point release (Aug 2026). Almost always a net win — install it unless you have a specific reason to stay on the 6.8 GA kernel.
 
 ### Timeshift (lines 38–40)
 

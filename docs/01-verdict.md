@@ -24,13 +24,13 @@ Both distributions are the **same operating system underneath**. They share:
 
 | Axis | Value | Notes |
 |------|-------|-------|
-| Base | Ubuntu 24.04 "Noble Numbat" | Identical `main`, `universe`, `multiverse` repos |
-| Kernel | 6.8 GA, HWE track to 6.11+ | Same `linux-generic` or `linux-generic-hwe-24.04` |
-| LTS window | 5 years standard (Apr 2029), +5 with Ubuntu Pro | Kubuntu gets the same extended support |
+| Base | Ubuntu 24.04.4 "Noble Numbat" (current point release, Feb 2026) | Identical `main`, `universe`, `multiverse` repos |
+| Kernel | 6.8 GA, HWE track at 6.17 (as of 24.04.4) | Same `linux-generic` or `linux-generic-hwe-24.04` |
+| LTS window | 5 years standard (May 2029), +5 with Ubuntu Pro (to 2034), +2 more with Legacy add-on (to 2036) | Kubuntu gets the same extended support |
 | Init / service manager | systemd 255 | Same cgroup v2, same `systemd-resolved`, same `journald` |
 | Package format | `.deb` via APT | Same PPAs work on both |
-| Mesa / kernel graphics stack | Mesa 24.0+, `amdgpu` for Ryzen 4800H iGPU | Identical |
-| NVIDIA proprietary driver | `nvidia-driver-550` (default), `-555` (HWE) | Identical packages |
+| Mesa / kernel graphics stack | Mesa 25.2.x (in 24.04.4 HWE), `amdgpu` for Ryzen 4800H iGPU | Identical |
+| NVIDIA proprietary driver | `nvidia-driver-580` (production branch, current as of Feb 2026) | Identical packages; `ubuntu-drivers devices` recommends 580 |
 
 **Conclusion: the difference is purely the desktop shell, the preinstalled app set, and the defaults around Snap and Wayland.** That is where the decision is made.
 
@@ -56,9 +56,9 @@ On 16 GB RAM with PyTorch model fits, Gazebo simulations, and Chromium open for 
 
 The single axis where Ubuntu has a legitimate edge.
 
-- **GNOME 46 on Wayland with NVIDIA 550+** implements explicit sync. It is now usable day-to-day: Firefox hardware acceleration works, XWayland apps don't flicker, suspend-resume is reliable, and VRR is exposed. GNOME is the reference Wayland experience for NVIDIA in 2024–2026.
+- **GNOME 46 on Wayland with NVIDIA 580** implements explicit sync and has Wayland `fifo-v1` protocol support (shipped in 580). It is polished day-to-day: Firefox hardware acceleration works, XWayland apps don't flicker, suspend-resume is reliable, VRR is exposed. GNOME remains the reference Wayland experience for NVIDIA in 2024–2026.
 - **Plasma 5.27 on Wayland with NVIDIA** is the worst combination in the Linux desktop landscape. Expect cursor flicker, screen tearing on XWayland apps (including Chromium), and occasional compositor crashes. This is why you will run **Plasma 5.27 on X11** (the login screen offers the choice).
-- **Plasma 6 on Wayland with NVIDIA 555+** is excellent — arguably better than GNOME. But Plasma 6 is not in Kubuntu 24.04 LTS by default.
+- **Plasma 6 on Wayland with NVIDIA 580** is excellent — arguably better than GNOME. But Plasma 6 is not in Kubuntu 24.04 LTS by default; it requires the Kubuntu Backports PPA or an upgrade to 24.10/25.04/25.10/26.04.
 - **For ROS 2 / Gazebo Harmonic / RViz2**, X11 remains the safer path on NVIDIA regardless of desktop — many robotics GUI apps still assume X11, and OpenGL context creation under NVIDIA+XWayland has edge cases.
 
 Net: you do not need Wayland. You need a stable desktop that does not fight your driver. **Winner (on X11 baseline): Kubuntu.** If you insist on Wayland for its own sake, Ubuntu wins — but it is the wrong priority for your workload.

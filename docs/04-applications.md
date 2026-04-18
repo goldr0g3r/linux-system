@@ -99,8 +99,8 @@ Every entry specifies **install channel**:
 
 | App | Channel | Install | Use case |
 |-----|---------|---------|----------|
-| KiCad 8 | Repo | `ppa:kicad/kicad-8.0-releases` (see [3.2](03-dev-environment/02-embedded.md)) | PCB layout (primary) |
-| KiCad nightly | FP | `flatpak install flathub org.kicad.KiCad` | Parallel install of newer builds |
+| KiCad 9 | Repo | `ppa:kicad/kicad-9.0-releases` (see [3.2](03-dev-environment/02-embedded.md)) | PCB layout (primary) — current stable 9.0.8 |
+| KiCad (Flatpak) | FP | `flatpak install flathub org.kicad.KiCad` | Parallel install for testing pre-release builds |
 | FreeCAD (stable) | APT | `sudo apt install freecad` | Mechanical CAD for watertight enclosures |
 | FreeCAD (RealThunder weekly) | BIN | AppImage from GitHub | More capable assembly workbench |
 | OpenSCAD | APT | `sudo apt install openscad` | Parametric 3D for brackets / mounts |

@@ -4,23 +4,25 @@
 
 # 3.2 Embedded & Hardware Toolchain
 
-KiCad 8 for PCB design, `arm-none-eabi-gcc` + OpenOCD for STM32 bare-metal, PlatformIO for higher-level workflows, ST-Link udev rules so you do not need `sudo` to flash a Nucleo-144, and VS Code from Microsoft's APT repo (not Snap).
+KiCad 9 for PCB design, `arm-none-eabi-gcc` + OpenOCD for STM32 bare-metal, PlatformIO for higher-level workflows, ST-Link udev rules so you do not need `sudo` to flash a Nucleo-144, and VS Code from Microsoft's APT repo (not Snap).
 
 Everything here goes on the **host** — these tools need `/dev/ttyACM*`, `/dev/ttyUSB*`, and udev events that are messy to forward into containers.
 
-## KiCad 8 (primary PCB EDA)
+## KiCad 9 (primary PCB EDA)
+
+Ubuntu 24.04's own repos ship KiCad 7.0.x. The upstream `kicad/kicad-9.0-releases` PPA provides the current stable **KiCad 9.0.8** (as of April 2026) and supports Ubuntu 22.04 / 24.04 / 24.10 / 25.04 / 25.10 / 26.04.
 
 ```bash
-sudo add-apt-repository --yes ppa:kicad/kicad-8.0-releases
+sudo add-apt-repository --yes ppa:kicad/kicad-9.0-releases
 sudo apt update
-sudo apt install -y \
+sudo apt install --install-recommends -y \
   kicad kicad-libraries kicad-footprints kicad-symbols kicad-templates kicad-packages3d \
-  kicad-demos
+  kicad-demos kicad-doc-en
 
 # Optional: pull JLCPCB / LCSC libraries via kicad-cli plugin manager from inside KiCad.
 ```
 
-If you want rolling KiCad (9.x nightlies) in parallel without breaking the stable 8.x install, use Flatpak:
+If you want to run the Flatpak version in parallel (e.g. to test a pre-release build without breaking the stable PPA install), use Flatpak:
 
 ```bash
 flatpak install -y flathub org.kicad.KiCad
