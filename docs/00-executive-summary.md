@@ -18,7 +18,9 @@
 
 Why, in one paragraph: your workload is *heterogeneous* (embedded toolchains, C++ compiles, AI training, KiCad, web dev, VM/container sprawl). You need an OS that (a) stays out of the way, (b) does not impose Snap's confinement or autoupdate on your Firefox/IDE/terminal, (c) hands you a tiling + virtual-desktop workflow without fighting GNOME extension rot, and (d) survives NVIDIA driver updates without mysterious Wayland regressions. Kubuntu 24.04 LTS delivers all four; Ubuntu 24.04 delivers the last one (marginally) and loses the first three.
 
-Full reasoning with six axes of comparison is in [Part 1 — The Verdict](01-verdict.md).
+Full reasoning with six axes of comparison is in [Part 1 — The Verdict (v1)](01-verdict.md).
+
+> **2026 landscape update (Apr 18, 2026):** A re-evaluation against Kubuntu 26.04 LTS "Resolute Raccoon" (ships Apr 23), Fedora 43 KDE Spin, and EndeavourOS "Ganymede Neo" concludes: **install Kubuntu 24.04 LTS today, plan the upgrade to Kubuntu 26.04.1 LTS for ~August 2026.** Full reasoning: [Part 1 (v2) — 2026 Re-verdict](01-verdict_v2.md) · [/best — Distro Landscape Research](best/README.md). The 24.04 install procedure in Part 2 below remains correct and unchanged.
 
 ---
 

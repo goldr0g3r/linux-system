@@ -19,7 +19,9 @@ Read sequentially for a full build-from-scratch, or jump directly to the section
 
 | You want to... | Start here |
 |----------------|-----------|
-| Understand why Kubuntu over Ubuntu | [Part 1 — The Verdict](docs/01-verdict.md) |
+| Understand why Kubuntu over Ubuntu (2024 analysis) | [Part 1 — The Verdict (v1)](docs/01-verdict.md) |
+| Review the 2026 landscape verdict | [Part 1 (v2) — 2026 Re-verdict](docs/01-verdict_v2.md) |
+| Compare Fedora vs EndeavourOS vs Kubuntu, evaluate Ubuntu 26.04 | [/best — 2026 Distro Research](docs/best/README.md) |
 | Install Linux right now | [Part 2 — Setup Guide](docs/02-setup/README.md) |
 | Set up the dev environment on an existing install | [Part 3 — Dev Environment](docs/03-dev-environment/README.md) |
 | Find an app for a specific task | [Part 4 — Application Stack](docs/04-applications.md) |
@@ -35,7 +37,16 @@ Read sequentially for a full build-from-scratch, or jump directly to the section
 The verdict in one paragraph, plus a 10-step quickstart.
 
 ### [Part 1 — The Verdict: Kubuntu 24.04 vs Ubuntu 24.04](docs/01-verdict.md)
-Deep technical comparison across six axes (resource management, Wayland + NVIDIA, multitasking workflow, Snap/telemetry, DX vs UX) with a definitive recommendation pinned to your profile.
+Deep technical comparison across six axes (resource management, Wayland + NVIDIA, multitasking workflow, Snap/telemetry, DX vs UX) with a definitive recommendation pinned to your profile. **Superseded by [Part 1 (v2)](docs/01-verdict_v2.md) as of 2026-04-18; retained for historical record.**
+
+### [Part 1 (v2) — The 2026 Re-verdict](docs/01-verdict_v2.md)
+Dated 2026-04-18. Consolidated conclusion after the 2026 landscape review: stay on Kubuntu 24.04 LTS today, upgrade to Kubuntu 26.04.1 LTS in ~August 2026. Includes the revised non-negotiable technical positions table.
+
+### [/best — 2026 Distro Landscape Research](docs/best/README.md)
+Two deep-research documents that feed the v2 verdict.
+
+1. [Fedora KDE vs EndeavourOS vs Kubuntu — 2026 Deep Research](docs/best/01-distro-deep-research.md) — 8-axis comparison (release cadence, ROS 2 via Distrobox, NVIDIA, PREEMPT_RT, TUF enablement, dual-boot, package ecosystem, switching cost).
+2. [Ubuntu 26.04 LTS "Resolute Raccoon" Evaluation](docs/best/02-ubuntu-26.04-evaluation.md) — what changes (kernel 7.0, Plasma 6.6, sudo-rs, Wayland-default, native CUDA/ROCm), the `.0` release risk, and the August 2026 upgrade timeline.
 
 ### [Part 2 — The Ultimate OS Setup Guide](docs/02-setup/README.md)
 Scratch-to-powerhouse installation and tuning.
@@ -90,7 +101,12 @@ c:\Code\linux-system\
 ├── README.md                          (this file — landing page + TOC)
 └── docs/
     ├── 00-executive-summary.md        (TL;DR verdict + 10-step quickstart)
-    ├── 01-verdict.md                  (Part 1 — Kubuntu vs Ubuntu)
+    ├── 01-verdict.md                  (Part 1 v1 — Kubuntu vs Ubuntu 24.04)
+    ├── 01-verdict_v2.md               (Part 1 v2 — 2026 Re-verdict; supersedes v1)
+    ├── best/                          (2026 distro landscape research)
+    │   ├── README.md                  (section landing page)
+    │   ├── 01-distro-deep-research.md (Fedora KDE vs EndeavourOS vs Kubuntu)
+    │   └── 02-ubuntu-26.04-evaluation.md  (Resolute Raccoon upgrade analysis)
     ├── 02-setup/                      (Part 2 — Installation & tuning)
     │   ├── README.md                  (section landing page)
     │   ├── 01-windows-prep.md
